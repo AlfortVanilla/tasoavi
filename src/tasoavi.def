@@ -1,0 +1,26 @@
+LIBRARY tasoavi
+EXPORTS
+; --- the three whose behaviour is changed ---
+    AVIStreamGetFrameOpen  = Shim_AVIStreamGetFrameOpen
+    AVIStreamGetFrame      = Shim_AVIStreamGetFrame
+    AVIStreamGetFrameClose = Shim_AVIStreamGetFrameClose
+; --- the other eight the game imports ---
+    AVIFileInit            = Shim_AVIFileInit
+    AVIFileExit            = Shim_AVIFileExit
+    AVIFileOpenA           = Shim_AVIFileOpenA
+    AVIFileInfoA           = Shim_AVIFileInfoA
+    AVIFileGetStream       = Shim_AVIFileGetStream
+    AVIFileRelease         = Shim_AVIFileRelease
+    AVIStreamInfoA         = Shim_AVIStreamInfoA
+    AVIStreamReadFormat    = Shim_AVIStreamReadFormat
+; --- commonly used by any AVIFile reader ---
+    AVIFileAddRef          = Shim_AVIFileAddRef
+    AVIStreamAddRef        = Shim_AVIStreamAddRef
+    AVIStreamRelease       = Shim_AVIStreamRelease
+    AVIStreamOpenFromFileA = Shim_AVIStreamOpenFromFileA
+    AVIStreamRead          = Shim_AVIStreamRead
+    AVIStreamLength        = Shim_AVIStreamLength
+    AVIStreamStart         = Shim_AVIStreamStart
+    AVIStreamFindSample    = Shim_AVIStreamFindSample
+    AVIStreamSampleToTime  = Shim_AVIStreamSampleToTime
+    AVIStreamTimeToSample  = Shim_AVIStreamTimeToSample

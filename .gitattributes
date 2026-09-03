@@ -1,0 +1,18 @@
+# リポジトリ内は LF に正規化し、チェックアウトも LF にする。
+* text=auto eol=lf
+
+# バッチファイルだけは CRLF でなければならない。
+# LF だと cmd.exe が行継続 (^) を正しく扱わず、build.bat の vswhere 呼び出しが
+# 静かに壊れる。実際にこの罠を踏んだので、Git 側で固定しておく。
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# バイナリ
+*.dll  binary
+*.exe  binary
+*.zip  binary
+*.pak  binary
+*.avi  binary
+
+# GitHub の言語判定から外す
+docs/**  linguist-documentation
