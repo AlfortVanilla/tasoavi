@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
---------------------------------------------------------------------------
-
-このライセンスが及ぶのは tasoavi 自身のソースコードと、そこからビルドされる
-tasoavi.dll / tasopatch.exe、および同梱のスクリプトと文書だけです。
-
-「誰彼 -たそがれ-」およびそのデータ (実行ファイル、*.pak、mov フォルダの動画など)
-の著作権は株式会社アクアプラス / Leaf に帰属します。本配布物にはそれらを一切
-含んでおらず、再配布物に含めることも認められません。
