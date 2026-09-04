@@ -130,10 +130,26 @@ VirusTotal のスキャン結果（リリース時点。定義更新で変わる
 | ファイル | 検出 | 内訳 |
 |---|---|---|
 | [tasoavi.dll](https://www.virustotal.com/gui/file/315b4321d36ef5dfefdd67c2698f2b4be2c3cc10f56c1b2846a4baf9ee140f45) | 1 / 71 | Cynet（ML スコアラ） |
-| [tasopatch.exe](https://www.virustotal.com/gui/file/5a1d297571f309382c0368741cc894f834f688e4f4c1635205b1d3f0430b658e) | 2 / 70 | Microsoft `Wacatac.B!ml`、SecureAge |
+| [tasopatch.exe](https://www.virustotal.com/gui/file/5a1d297571f309382c0368741cc894f834f688e4f4c1635205b1d3f0430b658e) | 1 / 70 | SecureAge（ML スコアラ） |
 
 いずれも機械学習ベースのエンジンのみで、パターンマッチ系のエンジンは1つも反応していません。
-`tasopatch.exe` の Microsoft の検出については、誤検出として報告しています。
+
+### Microsoft Defender の検出は解除済み
+
+`tasopatch.exe` は当初 Microsoft Defender にも `Trojan:Win32/Wacatac.B!ml` として検出されていましたが、
+誤検出として申告した結果、**2026-09-04 に Microsoft が検出を削除しました。**
+
+> At this time, the submitted files do not meet our criteria for malware or potentially
+> unwanted applications. The detection has been removed.
+
+それでも古い判定がキャッシュに残って検出される場合は、Microsoft の案内どおり
+**管理者権限のコマンドプロンプト**で次を実行してください。
+
+```
+cd "C:\Program Files\Windows Defender"
+MpCmdRun.exe -removedefinitions -dynamicsignatures
+MpCmdRun.exe -SignatureUpdate
+```
 
 `SHA256SUMS.txt` で同梱物すべてのハッシュを確認できます（PowerShell なら
 `Get-FileHash tasoavi.dll -Algorithm SHA256`）。

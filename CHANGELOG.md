@@ -1,5 +1,12 @@
 # 変更履歴
 
+## 未リリース
+
+- Microsoft Defender の `tasopatch.exe` に対する誤検出 (`Trojan:Win32/Wacatac.B!ml`) が
+  2026-09-04 に解除された。README のウイルス対策ソフトの節を更新し、キャッシュに
+  古い判定が残っている場合の対処 (`MpCmdRun.exe -removedefinitions -dynamicsignatures`)
+  を追記。バイナリは v1.0.0 のまま変更なし。
+
 ## 1.0.0 — 2026-09-03
 
 初版。
